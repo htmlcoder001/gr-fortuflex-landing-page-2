@@ -178,28 +178,25 @@
     height: 450px;
   }
   .features {
-    background-image: url(../img/features-bg-mobile.png);
+    background-image: url(../img/features-bg-mobile-2.png);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
     margin-top: 0;
-    height: 1450px;
+    height: 750px;
   }
   .features-wrapper__heading {
     margin-top: -200px;
     font-size: 62px;
     line-height: 67px;
     text-align: center;
+    margin-bottom: 30px;
   }
   .features-wrapper {
     padding-top: 0;
     
   }
-  .features-wrapper__box {
-    grid-template-columns: 1fr;
-    max-width: 320px;
-    justify-content: center;
-  }
+  
   .cta-wrapper {
     flex-direction: column-reverse;
     gap: 32px;
@@ -246,6 +243,16 @@
     font-size: 46px;
     line-height: 50px;
   }
+  .features-wrapper__box {
+    justify-content: center;
+  }
+  .features-box__item {
+    max-width: 320px;
+  }
+  .features-item__text {
+    font-size: 23px;
+    line-height: 27px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -257,10 +264,6 @@
     margin: 0;
     height: 500px;
   }
-  .features {
-    -webkit-background-size: cover;
-    background-size: cover;
-  }
   .about {
     margin-top: 24px;
   }
@@ -268,9 +271,6 @@
     font-size: 42px;
     line-height: 46px;
     margin-top: -160px;
-  }
-  .features {
-    height: 1150px;
   }
   .about-content__heading {
     font-size: 32px;
@@ -312,6 +312,19 @@
   }
   .howto-wrapper__image {
     max-width: 450px;
+  }
+  .features-wrapper__box {
+    justify-content: center;
+  }
+  .features-item__icon {
+    height: 60px;
+  }
+  .features-item__text {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .features-box__item {
+    max-width: 260px;
   }
 }
 @media (max-width: 480px) {
@@ -366,6 +379,7 @@
   .callback-form__checkbox {
     gap: 8px;
   }
+  
 }
 @media (max-width: 375px) {
   .intro {
@@ -376,11 +390,8 @@
     line-height: 37px;
     margin-top: -140px;
   }
-  .features-item__text {
-    font-size: 23px;
-    line-height: 26px;
-  }
   .features {
+    background-image: url(../img/features-bg-mobile.png);
     height: 1050px;
   }
   .header-wrapper__button {
@@ -433,6 +444,10 @@
   }
   .theme-button__text {
     font-size: 18px;
+  }
+  .features-wrapper__box {
+    grid-template-columns: 1fr;
+    max-width: 320px;
   }
 }
 
