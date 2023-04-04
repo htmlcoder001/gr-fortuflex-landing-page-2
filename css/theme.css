@@ -1,0 +1,180 @@
+/*! Theme styles. (theme.css) | @author webtitov.ru */
+
+:root {
+  --theme-blue: #0160A3;
+  --theme-font: 'Roboto', sans-serif;
+  
+  --website-width: 1180px;
+}
+
+body {
+  background-color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.theme-wrapper {
+  display: grid;
+  align-items: start;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  width: 100%;
+  position: relative;
+  max-width: var(--website-width);
+  margin: 0 auto;
+}
+
+.theme-button {
+  cursor: pointer;
+  
+  width: 187px;
+  height: 44px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  position: relative;
+  
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  
+  -webkit-animation: flash linear 2.5s infinite;
+  animation: flash linear 2.5s infinite;
+  background: linear-gradient(89.64deg, #FF4100 0.31%, #FF9900 99.76%);
+}
+.theme-button__text {
+  white-space: nowrap;
+  font-family: var(--theme-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+.theme-button:hover {
+  background-color: var(--theme-dark-green);
+}
+
+.theme-overlay {
+  background: rgba(9, 9, 12, 0.5);
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  z-index: 1001;
+}
+.--modal-show.theme-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+.theme-modal {
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  max-width: 336px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 16px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1010;
+}
+.theme-modal.--modal-show {
+  opacity: 1;
+  pointer-events: all;
+}
+.form-sent button[type="submit"] {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.--sent-notification {
+
+}
+
+.--error-notification {
+
+}
+
+.form-notification {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1110;
+  top: 50%;
+  left: 50%;
+  background-color: #0D1929;
+  padding: 16px 32px;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: fixed;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.form-notification__text {
+  font-family: var(--theme-font);
+  font-size: 18px;
+  color: #ffffff;
+}
+.--error-text {
+  display: none;
+}
+
+.--sent-notification .form-notification,
+.--error-notification .form-notification {
+  opacity: 1;
+}
+.--sent-notification .theme-overlay,
+.--error-notification .theme-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+.--error-notification .form-notification__text {
+  display: none;
+}
+.--error-notification .form-notification__text.--error-text {
+  display: block;
+}
+
+@keyframes flash{0%{}50%{background:#FF4100}100%{}}
+@keyframes blink{0%{}50%{opacity: 0.1;}100%{}}

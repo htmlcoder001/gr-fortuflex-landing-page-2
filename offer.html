@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fortuflex</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <meta name="description" content="Σταματήστε να υπομένετε τον πόνο και πολεμήστε με τον Fortuflex!" />
+  <!--OG tags-->
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fortuflex" />
+  <meta property="og:description" content="Σταματήστε να υπομένετε τον πόνο και πολεμήστε με τον Fortuflex!" />
+  <meta property="og:image" content="https://i.imgur.com/2UaU379.png" />
+  <!--Css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/scale-mobail.css" />
+</head>
+<body>
+<main class="page">
+  <section class="video" id="video">
+    <div class="video-box" id="video-box">
+      <button type="button" class="video-box__btn" id="video-close">
+        ×
+      </button>
+      <video width="130" height="180" autoplay muted="true" loop playsinline id="video-img">
+        <!--<source src="./images/1.mp4" type="video/mp4">-->
+      </video>
+      <p style="
+            color: #FFFFFF;
+            position: absolute;
+            top: 35%;
+            bottom: 50%;
+            left: 22%;
+            right: 0;">
+      
+      </p>
+    </div>
+  </section>
+  <section class="modal-order" id="modal-order">
+    <div class="modal-order__wrapper">
+      <button type="button" class="modal-order-btn" id="modal-close">
+        ×
+      </button>
+      
+      <form class="order-form" id="form-pac1" geo="cy" action="api.php" method="post"
+            onsubmit="return validate_form(this, 'Πληκτρολογηστε τον σωστο αριθμο τηλεφωνου');">
+        
+        <input value="1+1 32eur" name="comment" type="hidden">
+        
+        <input name="subid" type="hidden" value="{subid}">
+        <input name="px" type="hidden" value="{px}">
+        <input name="bayer" type="hidden" value="{bayer}">
+        
+        <div class="order-form-price">
+          <div class="order-form-price__sale">
+            32€
+          </div>
+          <div class="order-form-price__full">
+            64€
+          </div>
+        </div>
+        <input
+          type="text"
+          name="name"
+          required
+          placeholder="Όνομα"
+        />
+        <input
+          type="tel"
+          name="phone"
+          required
+          placeholder="Τηλέφωνο (ενεργό κινητό)"
+        />
+        <button type="submit" class="order-form__btn btn-order">
+          ΠΑΡΑΓΓΕΙΛΤΕ ΤΟ ΤΩΡΑ
+        </button>
+      </form>
+      
+      <form class="order-form" id="form-pac2" geo="cy" action="api.php" method="post"
+            onsubmit="return validate_form(this, 'Πληκτρολογηστε τον σωστο αριθμο τηλεφωνου');">
+        
+        <input value="2+1 54eur" name="comment" type="hidden">
+        
+        <input name="subid" type="hidden" value="{subid}">
+        <input name="px" type="hidden" value="{px}">
+        <input name="bayer" type="hidden" value="{bayer}">
+        
+        <div class="order-form-price">
+          <div class="order-form-price__sale">
+            54€
+          </div>
+          <div class="order-form-price__full">
+            108€
+          </div>
+        </div>
+        <input
+          type="text"
+          name="name"
+          required
+          placeholder="Όνομα"
+        />
+        <input
+          type="tel"
+          name="phone"
+          required
+          placeholder="Τηλέφωνο (ενεργό κινητό)"
+        />
+        <button type="submit" class="order-form__btn btn-order">
+          ΠΑΡΑΓΓΕΙΛΤΕ ΤΟ ΤΩΡΑ
+        </button>
+      </form>
+      
+      <form class="order-form" id="form-pac3" geo="cy" action="api.php" method="post"
+            onsubmit="return validate_form(this, 'Πληκτρολογηστε τον σωστο αριθμο τηλεφωνου');">
+        
+        <input value="4+2 69eur" name="comment" type="hidden">
+        
+        <input name="subid" type="hidden" value="{subid}">
+        <input name="px" type="hidden" value="{px}">
+        <input name="bayer" type="hidden" value="{bayer}">
+        
+        <div class="order-form-price">
+          <div class="order-form-price__sale">
+            69€
+          </div>
+          <div class="order-form-price__full">
+            138€
+          </div>
+        </div>
+        <input
+          type="text"
+          name="name"
+          required
+          placeholder="Όνομα"
+        />
+        <input
+          type="tel"
+          name="phone"
+          required
+          placeholder="Τηλέφωνο (ενεργό κινητό)"
+        />
+        <button type="submit" class="order-form__btn btn-order">
+          ΠΑΡΑΓΓΕΙΛΤΕ ΤΟ ΤΩΡΑ
+        </button>
+      </form>
+    </div>
+  </section>
+  
+  
+  
+  <section class="info">
+    <div class="container container-fluid">
+      <div class="info-content">
+        <h2 class="info-content__title">Η ΖΩΗ ΧΩΡΙΣ ΠΟΝΟ ΕΙΝΑΙ ΚΑΝΟΝΑΣ!</h2>
+        <div class="info-content__wrapper">
+          <div class="info-content__text">
+            <p>
+              Συμπαντική επισήμανση: Η εκάστοτε αγωγή (θεραπεία) διαφοροποιείτε
+              ανάλογα με την σοβαρότητα του κάθε περιστατικού και προσαρμόζεται
+              στις ανάγκες του ασθενούς
+            </p>
+            <img
+              class="info-content__product_mobail"
+              src="./images/product2.png"
+              width="380"
+              height="290"
+              alt=""
+            />
+            <a href="#scale" class="info-content__btn btn-order">
+              ΠΑΡΑΓΓΕΙΛΤΕ ΜΕ ΕΚΠΤΩΣΗ 50%
+            </a>
+          </div>
+          <img
+            class="info-content__product_desc"
+            src="./images/product2.png"
+            width="380"
+            height="290"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="scale" id="scale">
+    <div class="container">
+      <h2 class="scale__title">
+        ΕΞΟΙΚΟΝΟΜΕΙΤΕ ΧΡΗΜΑΤΑ ΜΕ ΤΗΝ
+        <span> ΠΑΡΑΓΓΕΛΙΑ ΕΝΟΣ ΠΑΚΕΤΟΥ </span>
+      </h2>
+      <p class="scale__subtitle">Εργαλείο αξιολόγησης του πόνου</p>
+      <p class="scale__description">
+        Καθορίστε την πορεία σας με βάση τη Διεθνή Ταξινόμηση του Πόνου
+      </p>
+      <div class="scale__wrapper">
+        <img
+          src="./images/scale-desc.png"
+          width="1262"
+          height="690"
+          class="scale-desc"
+          alt=""
+        />
+        <img
+          src="./images/scale-mob.png"
+          width="480"
+          height="608"
+          class="scale-mobail"
+          alt=""
+        />
+        <div class="scale-content-desc">
+          <div class="scale-content-row">
+            <span class="scale-content-row__item">0</span>
+            <span class="scale-content-row__item">1</span>
+            <span class="scale-content-row__item">2</span>
+            <span class="scale-content-row__item">3</span>
+            <span class="scale-content-row__item">4</span>
+            <span class="scale-content-row__item">5</span>
+            <span class="scale-content-row__item">6</span>
+            <span class="scale-content-row__item">7</span>
+            <span class="scale-content-row__item">8</span>
+            <span class="scale-content-row__item">9</span>
+          </div>
+          <div class="scale-content-desc-text">
+            <div class="scale-content-desc-text__item">
+              <h3 class="scale-content-desc-text__title">Κανένας πόνος</h3>
+              <p class="scale-content-desc-text__info" data-desc-info="1">
+                Αισθάνομαι καλά
+              </p>
+            </div>
+            <div class="scale-content-desc-text__item">
+              <h3 class="scale-content-desc-text__title">
+                Ελαφρύς πόνος
+              </h3>
+              <p class="scale-content-desc-text__info" data-desc-info="2">
+                Ενοχλητικός πόνος, αλλά δεν παρεμποδίζει τις περισσότερες
+                δραστηριότητες. Ο ασθενής είναι ψυχολογικά προσαρμοσμένος στον πόνο,
+                με την βοήθεια όμως φαρμάκων και με παρασκευάσματα
+              </p>
+              <div class="scale-content-desc-text__images">
+                <p>1+1</p>
+                <img
+                  src="./images/caps1.png"
+                  width="314"
+                  height="314"
+                  alt=""
+                />
+                <span class="scale-content-desc-text__prices">
+                      <span>64€</span>
+                    </span>
+                <button type="button" class="scale-content-desc-text__btn btn-order" id="pac1-desc">
+                  εκπτωση -50%
+                  <span>32€</span>
+                </button>
+              </div>
+            
+            </div>
+            <div class="scale-content-desc-text__item">
+              <h3 class="scale-content-desc-text__title">Μέτριος πόνος</h3>
+              <p class="scale-content-desc-text__info" data-desc-info="3">
+                Ο πόνος παρεμποδίζει σημαντικά την καθημερινή ζωή.
+                Απαιτούνται αλλαγές στον τρόπο ζωής, αλλά ο ασθενής παραμένει
+                ανεξάρτητος. Ο ασθενής δυσκολεύεται να προσαρμοστεί στον πόνο.
+              </p>
+              <div class="scale-content-desc-text__images">
+                <p>2+1</p>
+                <img
+                  src="./images/caps2.png"
+                  width="314"
+                  height="314"
+                  alt=""
+                />
+                <span data-price="two" class="scale-content-desc-text__prices">
+                      <span>108€</span>
+                    </span>
+                <button type="button" class="scale-content-desc-text__btn btn-order" id="pac2-desc">
+                  εκπτωση -50%
+                  <span>54€</span>
+                </button>
+              </div>
+            
+            </div>
+            <div class="scale-content-desc-text__item">
+              <h3 class="scale-content-desc-text__title">Έντονος πόνος.</h3>
+              <p class="scale-content-desc-text__info" data-desc-info="4">
+                Ο ασθενής δεν είναι σε θέση να εκτελεί τις συνήθεις δραστηριότητες του.
+              </p>
+              <div class="scale-content-desc-text__images">
+                <p>4+2</p>
+                <img
+                  src="./images/caps3.png"
+                  width="314"
+                  height="314"
+                  alt=""
+                />
+                <span data-price="three" class="scale-content-desc-text__prices">
+                       <span>138€</span>
+                    </span>
+                <button type="button" class="scale-content-desc-text__btn btn-order" id="pac3-desc">
+                  εκπτωση -50%
+                  <span>69€</span>
+                </button>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scale-mobail__wrapper">
+        <img src="./images/scale-mob.png" width="480" height="608" class="scale-mobail__img" alt="">
+        <div class="scale-mobail-row">
+          <p class="scale-mobail-row__title">
+            Κανένας <br>πόνος
+          </p>
+          <p class="scale-mobail-row__title">
+            Ελαφρύς <br>πόνος
+          </p>
+          <p class="scale-mobail-row__title">
+            Μέτριος <br>πόνος
+          </p>
+          <p class="scale-mobail-row__title">
+            Έντονος <br>πόνος
+          </p>
+        </div>
+        <div class="scale-mobail-content">
+          <div class="scale-mobail-content-item">
+          </div>
+          <div class="scale-mobail-content-item">
+            <img src="./images/pac1-m.png" class="scale-mobail-content-item__img" width="84" height="90" alt="">
+            <p class="scale-mobail-content-item__text">
+              βαζάκι κάψουλες + κρέμα
+            </p>
+            <div class="scale-mobail-content-item__price">
+              <p class="scale-mobail-content-item__price-full">
+                64€
+              </p>
+            </div>
+            <button type="button" class="scale-mobail-content-item__btn btn-order" id="pac1-mobl">
+              εκπτωση -50%
+              <span>32€</span>
+            </button>
+          </div>
+          <div class="scale-mobail-content-item">
+            <img src="./images/pac2-m.png" class="scale-mobail-content-item__img" width="89" height="90" alt="">
+            <p class="scale-mobail-content-item__text">
+              2 βαζάκια κάψουλες + 1 κρέμα
+            </p>
+            <div class="scale-mobail-content-item__price">
+              <p class="scale-mobail-content-item__price-full">
+                108€
+              </p>
+            </div>
+            <button type="button" class="scale-mobail-content-item__btn btn-order" id="pac2-mobl">
+              εκπτωση -50%
+              <span>54€</span>
+            </button>
+          </div>
+          <div class="scale-mobail-content-item">
+            <img src="./images/pac3-m.png" class="scale-mobail-content-item__img" width="106" height="90" alt="">
+            <p class="scale-mobail-content-item__text">
+              4 βαζάκια κάψουλες + 2 κρέμες
+            </p>
+            <div class="scale-mobail-content-item__price">
+              <p class="scale-mobail-content-item__price-full">
+                138€
+              </p>
+            </div>
+            <button type="button" class="scale-mobail-content-item__btn btn-order" id="pac3-mobl">
+              εκπτωση -50%
+              <span>69€</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <header class="header">
+    <div class="container container-fluid">
+      <div class="header-menu-mobail" id="menu-mobail">
+        <ul class="header-menu-mobail-list">
+          <li class="header-menu-mobail-list__item">
+            <a href="#use" class="header-menu-mobail-list__link">
+              Οδηγίες χρήσης
+            </a>
+          </li>
+          <li class="header-menu-mobail-list__item">
+            <a href="#structure" class="header-menu-mobail-list__link">
+              Σύνθεση
+            </a>
+          </li>
+          <li class="header-menu-mobail-list__item">
+            <a href="#opinion" class="header-menu-mobail-list__link">
+              Γνώμη εμπειρογνώμονα
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="header-bottom">
+        <div class="header-bottom__inner">
+          <a href="" class="header-bottom__logo">
+            <img src="./images/logo.svg" width="167" height="38" />
+          </a>
+          <nav class="header-bottom__nav">
+            <ul class="header-bottom-menu">
+              <li class="header-bottom-menu__item">
+                <a href="#use" class="header-bottom-menu__link">
+                  Οδηγίες χρήσης
+                </a>
+              </li>
+              <li class="header-bottom-menu__item">
+                <a href="#structure" class="header-bottom-menu__link">
+                  Σύνθεση
+                </a>
+              </li>
+              <li class="header-bottom-menu__item">
+                <a href="#opinion" class="header-bottom-menu__link">
+                  Γνώμη εμπειρογνώμονα
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <button class="header-humburger" id="hamb">
+            <div class="header-humburger__line"></div>
+            <div class="header-humburger__line"></div>
+            <div class="header-humburger__line"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="offer">
+    <div class="container">
+      <div class="offer-inner">
+        <div class="offer-content">
+          <h1 class="offer__title">
+            Σταματήστε να υπομένετε τον πόνο και πολεμήστε με τον
+            <span>Fortu<span>flex</span></span
+            >!
+          </h1>
+          <div class="offer-wrapper">
+            <p class="offer__subtitle">
+              Το Fortuflex θα σας ανακουφίσει από τον πόνο και θα αποκαταστήσει τις αρθρώσεις σας σε μία μόνο θεραπευτική αγωγή
+            </p>
+          </div>
+          <div class="offer-content__img-mobail">
+            <img
+              src="./images/prod-top-mobail.png"
+              width="246"
+              height="359"
+              alt=""
+            />
+          </div>
+          <form class="order-form" geo="" action="api.php" method="post"
+                onsubmit="return validate_form(this, 'Πληκτρολογηστε τον σωστο αριθμο τηλεφωνου');">
+    
+            <input value="1+1 32eur" name="comment" type="hidden">
+    
+            <input name="subid" type="hidden" value="{subid}">
+            <input name="px" type="hidden" value="{px}">
+            <input name="bayer" type="hidden" value="{bayer}">
+    
+            <div class="order-form-price">
+              <div class="order-form-price__sale">
+                32€
+              </div>
+              <div class="order-form-price__full">
+                64€
+              </div>
+            </div>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Όνομα"
+            />
+            <input
+              type="tel"
+              name="phone"
+              required
+              placeholder="Τηλέφωνο (ενεργό κινητό)"
+            />
+            <button type="submit" class="order-form__btn btn-order">
+              ΠΑΡΑΓΓΕΙΛΤΕ ΤΟ ΤΩΡΑ
+            </button>
+          </form>
+        </div>
+        <div class="offer-product">
+          <div class="order-offer-product__inner">
+            <span>-50%</span>
+            <img
+              class="order-offer-product__sticker"
+              src="./images/stic.png"
+              width="118"
+              height="118"
+              alt=""
+            />
+          </div>
+          <img
+            class="offer-product__img"
+            src="./images/prod.png"
+            alt=""
+            width="324"
+            height="467"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <a class="footer__logo">
+          <img src="./images/logo.svg" width="167" height="38" alt="" />
+        </a>
+        <div class="footer-content">
+          <p class="footer-content__text">
+            Duonature Pltd<br>
+            Char. Trikoupi 6-10, Athina 106 79, Greece
+          </p>
+          <p class="footer-content__text">
+            © 2013-<script>document.write(new Date().getFullYear())</script>
+            All rights reserved.
+            <br>
+            <img src="icons.png" style="width: auto; max-width:100%; height:auto; margin: auto">
+            <br>
+            <a href="/privacypolicy" target="_blank">Privacy policy</a>
+            <br>
+            <a href="/general-conditions-of-sale" target="_blank">General conditions of sale</a>
+            <br>
+            <a href="/legal-warning" target="_blank">Legal warning</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</main>
+
+<script src="js/app.js"></script>
+
+<script type="text/javascript" src="/libs/js/gdpr.js"></script>
+<link rel="stylesheet" href="/libs/js/gdpr.css">
+<script>
+  var phonePattern = {
+    'fr': '+33 ___ ___ __ __',
+    'de': '+49 ___ ____ ?__',
+    'at': '+43 ____ ____ ?__',
+    'ch': '+41 __ ___ __ __ ?__',
+    'ru': '+7 (___) ___-__-__',
+    'ua': '+38-___-___-__-__',
+    'by': '+375 ___ ___ ___',
+    'kz': '+7 ___ ___ ____',
+    'kg': '+___ ___ __ __ __',
+    'md': '0 ___ _____',
+    'az': '+___-__-___-__-__',
+    'ge': '+995 ___ __ __ __',
+    'es': '+34 ___ __ __ __',
+    'pe': '+51 ___ ___ _?_',
+    'cl': '+56 _ ____ ____',
+    'ar': '+54 __ ____ ____',
+    'co': '+57 _______??_',
+    'mx': '+52 __ ____ ____',
+    'it': '+39-___-___-____',
+    'esp': '+34 ___ __ __ __',
+    'pt': '+351 ___ ___ ___',
+    'br': '+55 __ ___?_ ____',
+    'prt': '+351 ___ ___ ___',
+    'id': '+62 ___ ___ ___',
+    'gr': '+30 ___ _______',
+    'cy': '+357 __ ______',
+    'ro': '+40 ___ ___ __? _',
+    'bg': '+359 ___ __ __? _',
+    'cz': '+420 ___ ___ ___',
+    'sk': '+421 ___ ___ ___',
+    'si': '+386 _ ___ __ __',
+    'pl': '+48 ___ ___ ___',
+    'al': '+355 __ ___ ___?_',
+    'rs': '+381 __ _____?_',
+    'ph': '+63 _ ____ __?_',
+    'hu': '+36 _ ___ ____',
+    'hr': '+385 _ ____ __?_',
+    'ba': '+387 __ ______',
+    /* --- */
+  }
+
+  const inputs = document.querySelectorAll('form input[name="phone"]')
+
+
+  //функция на проверку соответствия количества введенных в инпут символов, количеству необходимых в маске
+  function validate_form(form, alert_text = "Please enter valid phone number") {
+    var input_ln = form.querySelector('input[name="phone"]').value.replace(/ /g, '').length,
+      pattern_ln = phonePattern[form.getAttribute('geo')].replace(/\?| /g, '').length;
+    if (input_ln >= pattern_ln) return true;
+    else { alert(alert_text); return false; }
+  }
+
+  //сама маска, срабатывающая от ивентов ввода, фокуса, потери фокуса и нажатия кнопки мыши
+  document.addEventListener("DOMContentLoaded", function () {
+
+    var isTimeoutSeted = false;
+    var inputInterval;
+
+    function createInterval(input) {
+      if (!isTimeoutSeted) {
+        isTimeoutSeted = true;
+
+        inputInterval = setInterval(() => {
+          input.selectionStart = input.value.length
+          input.setSelectionRange(input.value.length, input.value.length);
+        }, 15)
+      }
+    }
+
+    function deleteInterval() {
+      clearInterval(inputInterval)
+      isTimeoutSeted = false;
+    }
+
+    function setSelectionStart(input) {
+      input.selectionStart = input.value.length
+    }
+
+    function mask(event) {
+      var input = event.currentTarget;
+      var geo = input.form.getAttribute('geo');
+      var matrix = phonePattern[geo];
+      var i = 0;
+      var def = matrix.replace(/\D/g, "");
+      var val = input.value.replace(/\D/g, "");
+
+      if (!event.type == "blur") {
+        setSelectionStart(input)
+      }
+
+      // Ставим интервал для инпута
+      createInterval(input)
+
+      if (event.type == "blur") {
+        // Сбрасываем интервал для инпута
+        deleteInterval()
+        if (input.value.length == 2) {
+          input.value = ""
+        }
+      }
+
+      if (def.length >= val.length) {
+        val = def
+      };
+
+      input.value = matrix.replace(/./g, function (a) {
+        return /[_|?\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+      });
+
+
+    };
+
+    inputs.forEach(input => {
+      input.addEventListener("input", mask, false);
+      input.addEventListener("blur", mask, false);
+      input.addEventListener("focus", mask, false);
+    })
+  });
+
+  $(document).ready(function () {
+    // Load GDPR
+    $(document).gdprCookieLaw({
+      moreLinkHref: '/privacypolicy',
+      theme: 'theme-1',
+      position: 'bottom-right',
+      width: '760px',
+      margin: '15px',
+      animation: 'fade-slide',
+      btnAcceptText: 'Ok'
+    });
+  });
+
+</script>
+
+</body>
+</html>
