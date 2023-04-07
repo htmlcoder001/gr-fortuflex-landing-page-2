@@ -374,136 +374,6 @@
       </div>
     </div>
   </section>
-  <header class="header">
-    <div class="container container-fluid">
-      <div class="header-menu-mobail" id="menu-mobail">
-        <ul class="header-menu-mobail-list">
-          <li class="header-menu-mobail-list__item">
-            <a href="#use" class="header-menu-mobail-list__link">
-              Οδηγίες χρήσης
-            </a>
-          </li>
-          <li class="header-menu-mobail-list__item">
-            <a href="#structure" class="header-menu-mobail-list__link">
-              Σύνθεση
-            </a>
-          </li>
-          <li class="header-menu-mobail-list__item">
-            <a href="#opinion" class="header-menu-mobail-list__link">
-              Γνώμη εμπειρογνώμονα
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="header-bottom">
-        <div class="header-bottom__inner">
-          <a href="" class="header-bottom__logo">
-            <img src="./images/logo.svg" width="167" height="38" />
-          </a>
-          <nav class="header-bottom__nav">
-            <ul class="header-bottom-menu">
-              <li class="header-bottom-menu__item">
-                <a href="#use" class="header-bottom-menu__link">
-                  Οδηγίες χρήσης
-                </a>
-              </li>
-              <li class="header-bottom-menu__item">
-                <a href="#structure" class="header-bottom-menu__link">
-                  Σύνθεση
-                </a>
-              </li>
-              <li class="header-bottom-menu__item">
-                <a href="#opinion" class="header-bottom-menu__link">
-                  Γνώμη εμπειρογνώμονα
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <button class="header-humburger" id="hamb">
-            <div class="header-humburger__line"></div>
-            <div class="header-humburger__line"></div>
-            <div class="header-humburger__line"></div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-  <section class="offer">
-    <div class="container">
-      <div class="offer-inner">
-        <div class="offer-content">
-          <h1 class="offer__title">
-            Σταματήστε να υπομένετε τον πόνο και πολεμήστε με τον
-            <span>Fortu<span>flex</span></span
-            >!
-          </h1>
-          <div class="offer-wrapper">
-            <p class="offer__subtitle">
-              Το Fortuflex θα σας ανακουφίσει από τον πόνο και θα αποκαταστήσει τις αρθρώσεις σας σε μία μόνο θεραπευτική αγωγή
-            </p>
-          </div>
-          <div class="offer-content__img-mobail">
-            <img
-              src="./images/prod-top-mobail.png"
-              width="246"
-              height="359"
-              alt=""
-            />
-          </div>
-          <form class="order-form" geo="" action="api.php" method="post"
-                onsubmit="return validate_form(this, 'Πληκτρολογηστε τον σωστο αριθμο τηλεφωνου');">
-    
-            <input value="1+1 32eur" name="comment" type="hidden">
-    
-            <input name="subid" type="hidden" value="{subid}">
-            <input name="px" type="hidden" value="{px}">
-            <input name="bayer" type="hidden" value="{bayer}">
-    
-            <div class="order-form-price">
-              <div class="order-form-price__sale">
-                32€
-              </div>
-              <div class="order-form-price__full">
-                64€
-              </div>
-            </div>
-            <input
-              type="text"
-              name="name"
-              required
-              placeholder="Όνομα"
-            />
-            <input
-              type="tel"
-              name="phone"
-              required
-              placeholder="Τηλέφωνο (ενεργό κινητό)"
-            />
-            <button type="submit" class="order-form__btn btn-order">
-              ΠΑΡΑΓΓΕΙΛΤΕ ΤΟ ΤΩΡΑ
-            </button>
-          </form>
-        </div>
-        <div class="offer-product">
-          <div class="order-offer-product__inner">
-            <span>-50%</span>
-            <img
-              class="order-offer-product__sticker"
-              src="./images/stic.png"
-              width="118"
-              height="118"
-              alt=""
-            />
-          </div>
-          <img
-            class="offer-product__img"
-            src="./images/prod-cream.png"
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
-  </section>
   <footer class="footer">
     <div class="container">
       <div class="footer__wrapper">
@@ -533,7 +403,8 @@
   </footer>
   
 </main>
-
+<div id="hamb" style="display: none;"></div>
+<div id="menu-mobail" style="display: none;"></div>
 <script src="js/app.js"></script>
 
 <script type="text/javascript" src="/libs/js/gdpr.js"></script>
